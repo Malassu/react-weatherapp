@@ -1,6 +1,4 @@
-import { config } from './config'
-
-const appID = config.API_KEY
+const appID = process.env.REACT_APP_WEATHER_API_KEY
 const apiURL = 'http://api.openweathermap.org/data/2.5'
 
 export const getWeatherFromApi = async (lon, lat) => {

@@ -1,11 +1,8 @@
 # react-weatherapp - JavaScript web application
 Weatherapp for displaying the weather in your current location using data from http://api.openweathermap.org
 
-NOTE! file 'src/API/config.js' needed to fetch weather data.
-File needs to contain following code:
-`export const config = {
-  API_KEY: <YOUR_API_KEY>
-}`
+NOTE! API key for openweathermap.org needed to run the application. Set API_KEY to environment variable
+REACT\_APP\_WEATHER\_API_KEY
 
 ## Running the application
 Run application locally `npm install && npm start` or by building the docker image
