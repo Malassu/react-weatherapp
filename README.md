@@ -1,5 +1,5 @@
 # react-weatherapp - JavaScript web application
-Weatherapp for displaying the weather in your current location using data from 'http://api.openweathermap.org/data/2.5'
+Weatherapp for displaying the weather in your current location using data from http://api.openweathermap.org
 
 NOTE! file 'src/API/config.js' needed to fetch weather data.
 File needs to contain following code:
