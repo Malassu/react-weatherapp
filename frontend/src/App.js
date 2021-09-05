@@ -15,22 +15,23 @@ class App extends React.Component {
   }
 
   async componentDidMount () {
-    this.getLocation()
-    this.getWeather()
+    await this.getLocation()
+    await this.getWeather()
   }
 
-  getLocation () {
+  async getLocation () {
     Geolocation.getCurrentPosition(
       (position) => {
         this.setState({
           lon: position.coords.longitude,
           lat: position.coords.latitude
         })
+        this.getWeather()
       },
       (error) => {
         console.log(error.code, error.message)
       },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     )
   }
 

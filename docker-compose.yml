@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+    backend:
+        image: react-weatherapp-backend:latest
+        container_name: backend
+        build:
+            dockerfile: Dockerfile
+            context: ./backend
+        environment:
+            API_KEY: ${API_KEY}
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./backend/src:/usr/src/app/src
+
+    frontend:
+        image: react-weatherapp:latest
+        container_name: frontend
+        build:
+            dockerfile: Dockerfile
+            context: ./frontend
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend/src:/usr/src/app/src
+        depends_on:
+            - backend
