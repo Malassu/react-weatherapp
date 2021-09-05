@@ -1,12 +1,13 @@
 # react-weatherapp - JavaScript web application
 Weatherapp for displaying the weather in your current location using data from http://api.openweathermap.org
 
-NOTE! API key for openweathermap.org needed to run the application. Set API_KEY to environment variable
-REACT\_APP\_WEATHER\_API_KEY
+NOTE! API key for openweathermap.org needed to run the application. Set API key to environment variable API\_KEY
 
 ## Running the application
-Run application locally `npm install && npm start` or by building the docker image
-and running the app in a container.
+Run application locally `npm install && npm start` on both backend and frontend folders or by building the docker images
+and running the apps in containers.
+
+App is served on localhost:3000 when using `npm start`
 
 ## Linting and unit testing
 1. Run `npm install` to install required packages for testing and linting
