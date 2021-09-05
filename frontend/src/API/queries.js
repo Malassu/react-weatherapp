@@ -1,9 +1,8 @@
-const appID = process.env.REACT_APP_WEATHER_API_KEY
-const apiURL = 'http://api.openweathermap.org/data/2.5'
+const apiURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:9000'
 
 export const getWeatherFromApi = async (lon, lat) => {
   try {
-    const endpoint = `${apiURL}/weather?lat=${lat}&lon=${lon}&appid=${appID}&units=metric`
+    const endpoint = `${apiURL}/weather?lat=${lat}&lon=${lon}`
     const response = await fetch(endpoint)
     return response ? response.json() : {}
   } catch (error) {
@@ -14,7 +13,7 @@ export const getWeatherFromApi = async (lon, lat) => {
 
 export const getForecastFromApi = async (lon, lat) => {
   try {
-    const endpoint = `${apiURL}/forecast?lat=${lat}&lon=${lon}&appid=${appID}&units=metric`
+    const endpoint = `${apiURL}/forecast?lat=${lat}&lon=${lon}`
     const response = await fetch(endpoint)
     return response ? response.json() : {}
   } catch (error) {
