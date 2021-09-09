@@ -17,6 +17,8 @@ services:
     frontend:
         image: react-weatherapp:latest
         container_name: frontend
+        environment:
+            REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
         build:
             dockerfile: Dockerfile
             context: ./frontend
