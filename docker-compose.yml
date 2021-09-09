@@ -21,8 +21,19 @@ services:
             dockerfile: Dockerfile
             context: ./frontend
         ports:
-            - "80:3000"
+            - "3000:3000"
         volumes:
             - ./frontend/src:/usr/src/app/src
         depends_on:
             - backend
+
+    nginx:
+        depends_on:
+          - backend
+          - frontend
+        restart: always
+        build:
+          dockerfile: Dockerfile
+          context: ./nginx
+        ports:
+          - "80:80"
