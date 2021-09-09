@@ -7,8 +7,8 @@ services:
         build:
             dockerfile: Dockerfile
             context: ./backend
-        environment:
-            API_KEY: ${API_KEY}
+            args:
+                API_KEY: ${API_KEY}
         ports:
             - "9000:9000"
         volumes:
@@ -17,9 +17,9 @@ services:
     frontend:
         image: react-weatherapp:latest
         container_name: frontend
-        environment:
-            REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
         build:
+            args:
+                REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
             dockerfile: Dockerfile
             context: ./frontend
         ports:
