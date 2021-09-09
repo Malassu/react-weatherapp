@@ -9,7 +9,7 @@ const port = 9000
 
 app.use(cors())
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     msg: "Welcome to weather API!"
   })
@@ -27,14 +27,14 @@ async function getForecast(lon, lat) {
   return response ? response.json() : {}
 }
 
-app.get("/api/weather", async (req, res) => {
+app.get("/weather", async (req, res) => {
   const lon = req.query.lon
   const lat = req.query.lat
   const response = await getWeather(lon, lat)
   res.json(response)
 })
 
-app.get("/api/forecast", async (req, res) => {
+app.get("/forecast", async (req, res) => {
   const lon = req.query.lon
   const lat = req.query.lat
   const response = await getForecast(lon, lat)
